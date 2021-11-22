@@ -1,0 +1,49 @@
+﻿@model Bit_Photos.Models.Photo
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Photo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="photoId" />
+            <div class="form-group">
+                <label asp-for="Album_Title" class="control-label"></label>
+                <input asp-for="Album_Title" class="form-control" />
+                <span asp-validation-for="Album_Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="picture" class="control-label"></label>
+                <input asp-for="picture" class="form-control" />
+                <span asp-validation-for="picture" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhotoName" class="control-label"></label>
+                <input asp-for="PhotoName" class="form-control" />
+                <span asp-validation-for="PhotoName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EDate" class="control-label"></label>
+                <input asp-for="EDate" class="form-control" />
+                <span asp-validation-for="EDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
